@@ -194,6 +194,10 @@ def javascript_catalog(request, domain='djangojs', packages=None):
                 en_catalog_missing = True
             # Otherwise it is harmless.
             pass
+
+    # Add extra locale paths
+    paths += settings.LOCALE_PATHS
+
     # next load the settings.LANGUAGE_CODE translations if it isn't english
     if default_locale != 'en':
         for path in paths:
